@@ -21,7 +21,7 @@ export default function LogIn() {
     e.preventDefault();
     setAccept(true);
 
-    // to check the validation of inputs before post on api
+    // to check the validation of inputs before post in api
     const isValid = password.length > 8;
     if (!isValid) return;
 
@@ -36,8 +36,6 @@ export default function LogIn() {
       Cookies.set("token", res.data.data.token);
 
       if (res.status === 200) {
-        localStorage.setItem("email", email);
-
         setTimeout(() => {
           navigate("/");
         }, 1000);
